@@ -6,16 +6,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-    String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    ListView l;
+    String[] names = {"Chirag", "Ayushi", "Tushar", "Shikhar", "Amiedeep", "Saurabh", "Palak"};
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        l = (ListView) findViewById(R.id.listView);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                R.layout.single_row, R.id.textView, days);
-        l.setAdapter(arrayAdapter);
+        listView = (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this, R.layout.single_row, R.id.viewText, names);
+        listView.setAdapter(arrayAdapter);
     }
 }
